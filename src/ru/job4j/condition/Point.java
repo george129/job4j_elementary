@@ -1,24 +1,35 @@
 package ru.job4j.condition;
 
-import java.math.*;
+import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
 
 public class Point {
+    private int x;
+    private int y;
+
+    public Point(int px, int py) {
+        this.x = px;
+        this.y = py;
+    }
+
     /**
-     * Calculates distance between two points by their coordinates
+     * Point p1 = new Point(x1,y1);
+     * Point p2 = new Point(x2,y2);
+     * double x = p1.distance(p2);
+     * Calculates distance between two point p1 and p2 by their coordinates
      * D = sqrt((x2-x1)^2 + (y2-y1)^2 )
-     * @param x1 - coordinate X of point 1
-     * @param y1 - coordinate Y of point 1
-     * @param x2 - coordinate X of point 2
-     * @param y2 - coordinate Y of point 2
+     * @param another - second point beside the first, which method uses it.
      * @return - distance
      */
-    public static double distance(int x1, int y1, int x2, int y2) {
-        double dist = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
-        return dist;
+
+    public double distance(Point another) {
+        return sqrt(pow(this.x - another.x, 2) + pow(this.y - another.y, 2));
     }
 
     public static void main(String[] args) {
-        double result = Point.distance(0, 3, 4, 0);
-        System.out.println("result (0, 3) to (4, 0) = " + result);
+        Point p1 = new Point(0, 4);
+        Point p2 = new Point(3, 0);
+        double dist = p1.distance(p2);
+        System.out.println(dist);
     }
 }
