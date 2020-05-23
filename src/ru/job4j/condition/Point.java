@@ -6,10 +6,17 @@ import static java.lang.Math.pow;
 public class Point {
     private int x;
     private int y;
+    private int z;
 
     public Point(int px, int py) {
         this.x = px;
         this.y = py;
+    }
+
+    public Point(int px, int py, int pz) {
+        this.x = px;
+        this.y = py;
+        this.z = pz;
     }
 
     /**
@@ -21,9 +28,12 @@ public class Point {
      * @param another - second point beside the first, which method uses it.
      * @return - distance
      */
-
     public double distance(Point another) {
         return sqrt(pow(this.x - another.x, 2) + pow(this.y - another.y, 2));
+    }
+
+    public double distance3d(Point p2) {
+        return sqrt(pow(this.x - p2.x, 2) + pow(this.y - p2.y, 2) + pow(this.z - p2.z, 2));
     }
 
     public static void main(String[] args) {

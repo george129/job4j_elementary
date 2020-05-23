@@ -2,15 +2,17 @@ package ru.job4j.condition;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.Assert.*;
 
 public class PointTest {
 
     @Test
     public void distance() {
-        double out;
-        double expect = 5.0;
-        out = Point.distance(0, 3, 4, 0);
-        Assert.assertEquals(out, expect, 0.01);
+        Assert.assertEquals(5.0, new Point(4, 0).distance(new Point(0, 3)), 0.01);
+    }
+
+    @Test
+    public void distance3d(){
+        Assert.assertEquals(5.19, new Point(1,1,1).distance3d(new Point(4,0,4)),0.01);
+
     }
 }
