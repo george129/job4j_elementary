@@ -25,6 +25,10 @@ public class MaxTest {
     @Test
     public void max3() {
         assertEquals(3, Max.max(3,2,1));
+        assertEquals(3, Max.max(2,3,1));
+        assertEquals(3, Max.max(1,2,3));
+        assertEquals(3, Max.max(3,3,3));
+
     }
 
     @Test
