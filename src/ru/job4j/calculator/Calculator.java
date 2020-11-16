@@ -7,6 +7,7 @@ public class Calculator {
         int four = 4;
         int five = 5;
         int six = 6;
+        int size = 10;
         int onePlusTwo = one + two;
         int sixDivTwo = six / two;
         int fiveMinusTwo = five - two;

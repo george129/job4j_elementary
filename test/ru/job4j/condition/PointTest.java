@@ -11,8 +11,11 @@ public class PointTest {
     }
 
     @Test
-    public void distance3d(){
-        Assert.assertEquals(5.19, new Point(1,1,1).distance3d(new Point(4,0,4)),0.01);
+    public void distance3d() {
+        Assert.assertEquals(
+                5.19,
+                new Point(1, 1, 1).distance3d(new Point(4, 4, 4)), 0.01
+        );
 
     }
 }
