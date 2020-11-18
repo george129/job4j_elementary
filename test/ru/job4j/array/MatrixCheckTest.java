@@ -34,7 +34,7 @@ public class MatrixCheckTest {
                 {' ', ' ', 'X'},
                 {' ', ' ', 'X'},
         };
-        boolean result = MatrixCheck.monoVertical(input, 2);
+        boolean result = monoVertical(input, 2);
         assertThat(result, is(true));
     }
 
@@ -46,8 +46,19 @@ public class MatrixCheckTest {
                 {' ', ' ', 'X'},
                 {' ', ' ', 'x'}
         };
-        boolean result = MatrixCheck.monoVertical(input, 2);
+        boolean result = monoVertical(input, 2);
         assertThat(result, is(false));
+    }
+
+    @Test
+    public void checkDiagonal() {
+        char[][] c = new char[][] {
+                {'a', 'b', 'c', '0'},
+                {'f', 's', 't', 'e'},
+                {'r', 'l', 'd', 'h'},
+                {'z', 'x', 'e', 'f'}
+        };
+        assertThat(extractDiagonal(c), is(new char[]{'a', 's', 'd', 'f'}));
     }
 
 }
