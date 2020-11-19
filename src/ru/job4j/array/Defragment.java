@@ -2,8 +2,6 @@ package ru.job4j.array;
 
 public class Defragment {
     public static String[] compress(String[] arr) {
-        int cnt = 0;
-        String tmp;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == null) {
                 for (int j = i + 1; j < arr.length; j++) {
@@ -13,7 +11,6 @@ public class Defragment {
                         break;
                     }
                 }
-                cnt++;
             }
         }
         return arr;
